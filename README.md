@@ -1,68 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/46c4ea6e-dd29-4ba7-be8a-9610dbd562a3/deploy-status)](https://app.netlify.com/sites/snake-game-pesto-ankit/deploys)
 
-## Available Scripts
+## Instructions
+[] You have to create a **Snake Game** using [`React`](https://reactjs.org/).
+[] If you don't know the mechanics of the game, here's a [link](https://playsnake.org/). Remember, your game doesn't have to be a copy of this. Only the mechanics are important.
+[] The game should be playable using the 4 arrow keys.
+[] The game should be able to display a score.
+[] You have to make a github repository under your profile and push there all the code.
+[] The game should be deployed on a static web hosting site such as `github.io` or `netlify.com`.
+[] In the beginning, don't focus on the animation/graphics a lot.
 
-In the project directory, you can run:
+## Optional Features
+[] Make the user sign-in and allow keeping of personal high-scores.
+[] Make a leader board displaying highest scores of all times along with username.
+[] Make multiple levels of the games such that after crossing one level, the speed of the snake increases by some factor.
+[] Allow for **rewards** which provide extra bonuses, shortening of snake length, etc.
+[] Think of some other additions that you can make to this classic game.
+[] Write unit tests/integration tests for the game.
 
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Created for Pesto's pre-work assignment
