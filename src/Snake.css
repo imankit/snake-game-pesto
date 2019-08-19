@@ -1,0 +1,34 @@
+/* Row */
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.row:not(:last-child) {
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Grid */
+.grid {
+  border: 1px solid #dddddd;
+  margin-bottom: 30px;
+}
+
+/* Cell */
+.cell {
+  height: 15px;
+  width: 15px;
+  /* width: -webkit-fill-available; */
+}
+
+.cell:not(:last-child) {
+  border-right: 1px solid #dddddd;
+}
+
+.cell.snake {
+  background: #000000;
+}
+
+.cell.food {
+  background: #dd0000;
+}
