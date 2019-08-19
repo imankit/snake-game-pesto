@@ -14,14 +14,11 @@ const DIFFICULTY = ['EASY', 'MEDIUM', 'HARD'];
 
 const INITIAL_STATE = {
   status: 'playing',
-  score: 3,
+  score: 0,
   snake: lib.getRange(3),
   food: [],
-  speed: 200,
   direction: 'Right',
   lastDirection: '',
-  difficulty: localStorage.getItem('difficulty') || 'MEDIUM',
-  updateSpeedAfterKill: true,
 };
 
 class Snake extends React.Component {
@@ -31,6 +28,10 @@ class Snake extends React.Component {
     this.minSpeed = 50;
     this.state = {
       ...lib.deepClone(INITIAL_STATE),
+      speed: 200,
+      difficulty: localStorage.getItem('difficulty') || 'MEDIUM',
+      highScore: localStorage.getItem('highScore') || 0,
+      updateSpeedAfterKill: true,
     };
   }
 
@@ -70,7 +71,13 @@ class Snake extends React.Component {
 
   stopGame = () => {
     this.stopTimer();
+    let highScore = this.state.highScore;
+    if (this.state.score > highScore) {
+      highScore = this.state.score;
+      localStorage.setItem('highScore', highScore);
+    }
     this.setState({
+      highScore,
       status: 'lost',
     });
   };
@@ -92,7 +99,6 @@ class Snake extends React.Component {
 
     if (!this.isMoveValid(newHead)) {
       this.stopGame();
-
       return;
     }
 
@@ -170,7 +176,12 @@ class Snake extends React.Component {
     this.setState((state, props) => ({
       speed: Math.max(this.minSpeed, Math.floor(state.speed * factor)),
     }));
-
+    this.setState((state) => {
+      let difficulty = 'EASY';
+      if (state.speed <= 200) difficulty = 'MEDIUM';
+      if (state.speed <= 100) difficulty = 'HARD';
+      return { difficulty };
+    });
     this.restartTimer();
   };
 
@@ -216,7 +227,8 @@ class Snake extends React.Component {
     this.setState({ updateSpeedAfterKill: data.checked });
 
   render() {
-    console.log(this.state);
+    console.log(this.state.speed);
+
     return (
       <div className={'game'}>
         <Grid columns={2} divided centered>
@@ -274,14 +286,18 @@ class Snake extends React.Component {
                   <Button onClick={this.restartGame}>Play again</Button>
                 </>
               )}
-              <>
+              <div style={{ marginTop: 20 }}>
                 {this.state.status === 'paused' && (
                   <Button onClick={this.startTimer}>Resume game</Button>
                 )}
                 {this.state.status === '' && (
                   <Button onClick={this.stopTimer}>Pause game</Button>
                 )}
-              </>
+                <Header
+                  icon="chess king"
+                  content={`High Score: ${this.state.highScore}`}
+                />
+              </div>
             </Grid.Column>
           </Grid.Row>
         </Grid>

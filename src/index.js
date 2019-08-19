@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Container style={{ margin: 20 }}>
-    <Header as="h1" textAlign="center">
+    <Header as="h1" textAlign="center" style={{ marginBottom: 20 }}>
       Snake Game
     </Header>
     <Snake />
